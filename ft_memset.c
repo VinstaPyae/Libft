@@ -6,14 +6,36 @@
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 19:02:08 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/22 19:07:06 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/05/24 19:01:41 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+/* #include <stdio.h>
+#include <string.h> */
 
-void    *memset(void *s, int c, size_t n)
+void    *ft_memset(void *s, int c, size_t n)
 {
+        int     i;
+        char    *ptr;
+
+        i = 0;
+        ptr = s;
+        while (i < n)
+        {
+                ptr[i] = c;
+                i++;
+        }
+        return (s);
 }
+
+/* int main(void)
+{
+        char *buff[5];
+        char *buff_1[5];
+
+        memset(buff, 'A', sizeof(buff));
+        printf("%s \n", buff);
+        ft_memset(buff_1, 'A', sizeof(buff_1));
+        printf("%s \n", buff_1);
+} */
