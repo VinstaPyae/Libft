@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 16:44:48 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/21 17:31:24 by pzaw             ###   ########.fr       */
+/*   Created: 2024/05/19 19:05:57 by pzaw              #+#    #+#             */
+/*   Updated: 2024/05/21 17:28:27 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-/* #include <stdio.h>
-#include <string.h> */
+/* #include <ctype.h>
+#include <stdio.h> */
 
-char	*ft_strchr(const char *s, int c)
+int	ft_isalnum(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			return ((char *)&s[i]);
-		}
-		i++;
-	}
-	return (NULL);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
+		return (8);
+	return (0);
 }
 
-/* int	main(void)
-{
-	printf("%s \n", strchr("fdsaffdggra",'a'));
-	printf("%s \n", ft_strchr("fdsaffdggra",'a'));
-} */
+/* int    main(void)
+ {
+	int c;
+	c = '1';
+	int r = isalnum(c);
+	printf("%d \n", r);
+	int z = ft_isalnum(c);
+	printf("%d \n", z);
+ } */

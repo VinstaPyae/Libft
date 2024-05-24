@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 16:44:48 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/21 17:31:24 by pzaw             ###   ########.fr       */
+/*   Created: 2024/05/19 18:10:23 by pzaw              #+#    #+#             */
+/*   Updated: 2024/05/19 19:23:46 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-/* #include <stdio.h>
-#include <string.h> */
+#ifndef LIBFT_H
+# define LIBFT_H
 
-char	*ft_strchr(const char *s, int c)
-{
-	int	i;
+int	ft_isalpha(int c);
+int	ft_isalnum(int c);
+int	ft_isdigit(int c);
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			return ((char *)&s[i]);
-		}
-		i++;
-	}
-	return (NULL);
-}
-
-/* int	main(void)
-{
-	printf("%s \n", strchr("fdsaffdggra",'a'));
-	printf("%s \n", ft_strchr("fdsaffdggra",'a'));
-} */
+#endif

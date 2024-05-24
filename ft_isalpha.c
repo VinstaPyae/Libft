@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 16:44:48 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/21 17:31:24 by pzaw             ###   ########.fr       */
+/*   Created: 2024/05/19 18:10:30 by pzaw              #+#    #+#             */
+/*   Updated: 2024/05/22 18:42:56 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-/* #include <stdio.h>
-#include <string.h> */
+#include <ctype.h>
+#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			return ((char *)&s[i]);
-		}
-		i++;
-	}
-	return (NULL);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1024);
+	return (0);
 }
 
-/* int	main(void)
-{
-	printf("%s \n", strchr("fdsaffdggra",'a'));
-	printf("%s \n", ft_strchr("fdsaffdggra",'a'));
-} */
+/* int    main(void)
+ {
+	int c;
+	c = 'C';
+	int r = isalpha(c);
+	printf("%d \n", r);
+	int z = ft_isalpha(c);
+	printf("%d \n", z);
+ } */

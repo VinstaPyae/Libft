@@ -1,37 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/21 16:44:48 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/21 17:31:24 by pzaw             ###   ########.fr       */
+/*   Created: 2024/05/22 17:41:02 by pzaw              #+#    #+#             */
+/*   Updated: 2024/05/22 19:01:21 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 /* #include <stdio.h>
-#include <string.h> */
+#include <stdlib.h> */
 
-char	*ft_strchr(const char *s, int c)
+int	ft_atoi(char *str)
 {
 	int	i;
+	int	result;
+	int	sign;
 
+	sign = 1;
+	result = 0;
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 	{
-		if (s[i] == c)
-		{
-			return ((char *)&s[i]);
-		}
 		i++;
 	}
-	return (NULL);
+	if (str[i] == 45 || str[i] == 43)
+	{
+		if (str[i] == 45)
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		result = result * 10 + str[i] - '0';
+		i++;
+	}
+	return (result * sign);
 }
 
-/* int	main(void)
+/* int main(void)
 {
-	printf("%s \n", strchr("fdsaffdggra",'a'));
-	printf("%s \n", ft_strchr("fdsaffdggra",'a'));
+    char s[] = "   -765491";
+    int j = atoi(s);
+    printf("%d\n", j);
+    int i = ft_atoi(s);
+    printf("%d\n", i);
 } */
