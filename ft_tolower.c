@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 17:37:12 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/21 17:38:03 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/05/25 02:43:08 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-/* #include <stdio.h>
-#include <ctype.h> */
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

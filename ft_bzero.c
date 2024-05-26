@@ -1,10 +1,8 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <strings.h>
+#include "libft.h"
 
 void    ft_bzero(void *s, size_t n)
 {
-     int	i;
+     size_t	i;
 
      i = 0;
      while (i < n)
@@ -14,7 +12,7 @@ void    ft_bzero(void *s, size_t n)
      }
 }
 
-int	main()
+/* int	main()
 {
 	char buffer[10] = "1";
 	int i = 0;
@@ -25,11 +23,11 @@ int	main()
 	}
 	printf("\n");
 	printf("\n");
-	bzero(buffer, sizeof(buffer));
+	ft_bzero(buffer, sizeof(buffer));
 	int j = 0;
 	while (j < sizeof(buffer))
 	{
 		printf("%s ",buffer);
 		j++;
 	}
-}
+} */

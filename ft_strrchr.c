@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:48:24 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/21 17:36:55 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/05/25 02:43:02 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-/* #include <stdio.h>
-#include <string.h> */
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
