@@ -6,7 +6,7 @@
 /*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 19:02:08 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/25 02:42:18 by jace             ###   ########.fr       */
+/*   Updated: 2024/05/27 16:31:53 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void    *ft_memset(void *s, int c, size_t n)
 {
-        int     i;
-        char    *ptr;
+        size_t     i;
+        unsigned char    *ptr;
 
         i = 0;
-        ptr = s;
+        ptr = (unsigned char *) s;
         while (i < n)
         {
                 ptr[i] = c;
