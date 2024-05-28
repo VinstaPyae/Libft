@@ -2,7 +2,7 @@
 
 void    ft_bzero(void *s, size_t n)
 {
-     size_t	i;
+     /* size_t	i;
      unsigned char	*ptr;
 
      i = 0;
@@ -11,10 +11,11 @@ void    ft_bzero(void *s, size_t n)
      {
 	ptr[i] = 0;
 	i++;
-     }
+     } */
+     ft_memset(s, 0, n);
 }
 
-int	main()
+/* int	main()
 {
 	char buffer[10] = "1";
 	int i = 0;
@@ -32,4 +33,4 @@ int	main()
 		printf("%s ",buffer);
 		j++;
 	}
-}
+} */

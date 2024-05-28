@@ -17,3 +17,13 @@ int     ft_memcmp(const void *s1, const void *s2, size_t n)
     }
     return (0);
 }
+
+/* int main()
+{
+    char buffer1[10] = "abcdefghi";
+    char buffer2[10] = "abcdefghi";
+    int result;
+    result = ft_memcmp(buffer1, buffer2, sizeof(buffer1));
+    printf("%d\n", result);
+    return (0);
+} */

@@ -12,3 +12,12 @@ char        *ft_strdup(const char *s1)
         ft_memcpy(ptr, s1, len);
         return (ptr);
 }
+
+/* int     main()
+{
+        char *str = "Hello World!";
+        char *dup = ft_strdup(str);
+        printf("%s\n", dup);
+        free(dup);
+        return (0);
+} */

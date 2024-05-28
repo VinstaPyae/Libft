@@ -15,3 +15,12 @@ void    *ft_memchr(const void *s, int c, size_t n)
     }
     return (NULL);
 }
+
+/* int main()
+{
+    char buffer[10] = "abcdefghi";
+    char *ptr;
+    ptr = ft_memchr(buffer, 'f', sizeof(buffer));
+    printf("%s\n", ptr);
+    return (0);
+} */

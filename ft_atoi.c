@@ -6,7 +6,7 @@
 /*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:41:02 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/28 01:25:14 by jace             ###   ########.fr       */
+/*   Updated: 2024/05/28 22:56:01 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(char *str)
 	sign = 1;
 	result = 0;
 	i = 0;
-	while (str[i] == 32)
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 	{
 		i++;
 	}
@@ -41,7 +41,7 @@ int	ft_atoi(char *str)
 
 /* int main(void)
 {
-    char s[] = "   -765491";
+    char s[] = " 	-765491";
     int j = atoi(s);
     printf("%d\n", j);
     int i = ft_atoi(s);

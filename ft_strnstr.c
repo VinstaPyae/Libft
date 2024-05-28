@@ -6,7 +6,7 @@
 /*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:01:51 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/27 22:35:05 by jace             ###   ########.fr       */
+/*   Updated: 2024/05/29 02:49:06 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
+/* need to ask*/
 /* int main(void)
 {
 	const char *largestring = "Foo Bar Baz";
-    const char *smallstring = "Baa";
+	const char *smallstring = "Baa";
     
 	char *ptr = strnstr(largestring, smallstring, sizeof(largestring));
 	char *pp = ft_strnstr(largestring, smallstring, sizeof(largestring));

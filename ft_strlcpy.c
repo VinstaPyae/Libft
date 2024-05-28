@@ -6,7 +6,7 @@
 /*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 19:07:32 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/28 00:07:06 by jace             ###   ########.fr       */
+/*   Updated: 2024/05/29 02:54:07 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,22 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
 
     i = 0;
     src_len = ft_strlen(src);
-    while (src[i] != '\0' && i < size - 1)
+    if (src_len + 1 < size)
     {
+        ft_memcpy(dest, src, src_len + 1);
+    }
+    else
+    {
+        while (i < size - 1)
+        {
             dest[i] = src[i];
             i++;
+        }
+        dest[i] = '\0';
     }
-    dest[i] = '\0';
     return (src_len);
 }
-
+/*need to ask*/
 /* int main(void)
 {
         const char *s;
