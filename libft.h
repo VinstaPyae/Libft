@@ -6,7 +6,7 @@
 /*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 18:10:23 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/29 02:52:36 by jace             ###   ########.fr       */
+/*   Updated: 2024/06/03 03:02:29 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int     ft_isprint(int c);
 int     ft_toupper(int c);
 int     ft_tolower(int c);
 int	ft_atoi(char *str);
+char    *ft_itoa(int n);
 
 size_t  ft_strlen(const char *s);
 size_t  ft_strlcpy(char *dest, const char *src, size_t size);
@@ -43,4 +44,8 @@ void    *ft_memset(void *s, int c, size_t n);
 void    ft_bzero(void *s, size_t n);
 void    *ft_calloc(size_t nmemb, size_t size);
 
+void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putendl_fd(char *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
 #endif

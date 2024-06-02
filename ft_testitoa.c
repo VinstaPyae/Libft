@@ -5,16 +5,19 @@ int	ft_wlen(int n)
 	int	nb;
 	int	len;
 
-	len = 1;
+	len = 0;
 	nb = n;
 	if (nb < 0)
+	{
+		nb *= -1;
 		len++;
+	}
 	while (nb /= 10)
 		len++;
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_testitoa(int n)
 {
 	int	len;
 	int	nb;
@@ -26,18 +29,15 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (NULL);
 	str[len + 1] = '\0';
-	while (len > 0)
+	if (nb < 0)
+		nb *= -1;
+	while (len >= 0)
 	{
-		if (nb < 0)
-		{
-			nb *= -1;
-			str[0] = '-';
-		}
+		if (n < 0 && len == 0)
+			str[len] = '-';
 		else
-		{
-			str[len] = (nb % 10) + '0';
-			nb /= 10;
-		}
+			str[len] = nb % 10 + '0';
+		nb /= 10;
 		len--;
 	}
 	return (str);
@@ -45,7 +45,8 @@ char	*ft_itoa(int n)
 
 /* int main(void)
 {
-	int n = -247;
-	char *s = ft_itoa(n);
+	int n = 247;
+	char *s = ft_testitoa(n);
 	printf("%s \n", s);
-} */
+}
+ */

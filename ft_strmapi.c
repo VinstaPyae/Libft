@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:20 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/30 14:39:44 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/03 01:59:08 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,34 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-        char	*ptr;
-        size_t	len;
+	unsigned int	i;
+	char	*res;
 
-        if (!s || !f)
-                return (NULL);
-        len = ft_strlen(s) + 1;
-        ptr = (char *)malloc(len);
-        if (ptr == NULL)
-                return (NULL);
-        ptr[len - 1] = '\0';
-        while (len-- > 1)
-                ptr[len - 1] = f(len - 1, s[len - 1]);
-        return (ptr);
+	res = (char *) malloc ((ft_strlen(s) + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (i < ft_strlen(s))
+	{
+		res[i] = (*f)(i, s[i]);
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }
+
+
+/* char my_func(unsigned int i, char str)
+{
+ 	printf("Call function: i = %d and s = %c \n", i, str);
+ 	return str - 32;
+}
+
+int main()
+{
+ 	char str[10] = "hello";
+ 	printf("Before Function %s\n", str);
+ 	char *result = ft_strmapi(str, my_func);
+ 	printf("After Function %s\n", result);
+ 	return 0;
+} */
