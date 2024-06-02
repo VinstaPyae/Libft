@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:00 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/30 14:22:01 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/01 18:22:21 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,15 @@ char	**ft_split(char const *s, char c)
         ptr[j] = NULL;
         return (ptr);
 }
+
+/* int main(void)
+{
+        char s[] = "My name is Papa Mila";
+        char **r = ft_split(s, ' ');
+        int i = 0;
+        while (r[i] != NULL)
+        {
+                printf("%s \n", r[i]);
+                i++;
+        }
+} */

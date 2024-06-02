@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:34 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/30 19:46:25 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/05/30 23:06:42 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!ptr)
 		return (NULL);
 	i = -1;
-	while (++i < len && s[start + i] != '\0')
+	while (i++ < len - 1 && s[start + i] != '\0')
 		ptr[i] = s[start + i];
 	ptr[i] = '\0';
 	return (ptr);
 }
 
-/* int	main(void)
+int	main(void)
 {
 	char s[] = "abcdefgh";
 	char *r = ft_substr(s, 6, 6);
 	printf("%s \n", r);
 }
- */
