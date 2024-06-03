@@ -3,74 +3,114 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:00 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/03 20:18:24 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/04 03:19:20 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_slen(char const *s)
+int	ft_slen(char const *s, char c)
 {
-        int     i;
-        int     c;
+	int	i;
+	int	j;
 
-        i = 0;
-        while (s[i])
-        {
-                c = 0;
-                if (s[i] == c)
-                {
-                        c++;
-                }
-                i++;
-        }
-        return (c);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			j++;
+		}
+		i++;
+	}
+	return (j);
 }
 
 char	**ft_split(char const *s, char c)
 {
-        char	**ptr;
-        size_t	i;
-        size_t	j;
-        size_t	k;
+	char	**ptr;
+	int	total_len;
+	int	i;
+	int	j;
+	int	k;
+	int	l;
 
-        if (!s)
-                return (NULL);
-        ptr = (char **)malloc((ft_slen(s) + 2) * sizeof(char *));
-        if (ptr == NULL)
-                return (NULL);
-        i = 0;
-        j = 0;
-        while (s[i] != '\0')
-        {
-                if (s[i] != c)
-                {
-                        k = 0;
-                        ptr[j] = (char *)malloc(ft_strlen(s) + 1);
-                        if (ptr[j] == NULL)
-                                return (NULL);
-                        while (s[i] != c && s[i] != '\0')
-                                ptr[j][k++] = s[i++];
-                        ptr[j++][k] = '\0';
-                }
-                else
-                        i++;
-        }
-        ptr[j] = NULL;
-        return (ptr);
+	total_len = ft_slen(s, c);
+	ptr = (char **) malloc ((total_len + 1) * sizeof(char));
+	i = 0;
+	k = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c)
+		{
+			j = 0;
+			while (s[i] != c && s[i] != '\0')
+			{
+				j++;
+				i++;
+			}
+			ptr[k] = (char *) malloc ((j + 1) * sizeof(char));
+			if (!ptr[k])
+				return (NULL);
+			l = 0;
+			while (l < j)
+			{
+				ptr[k][l] = s[i - j + l];
+				l++;
+			}
+			ptr[k][l] = '\0';
+			k++;
+		}
+		i++;
+	}
+	ptr[k] = NULL;
+	return (ptr);
 }
+
+/* char	**ft_split(char const *s, char c)
+{
+	char	**ptr;
+	int	total_len;
+	int	i;
+	int	j;
+
+	total_len = ft_slen(s, c);
+	ptr = (char **) malloc ((total_len + 1) * sizeof(char));
+	i = 0;
+	j = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c)
+		{
+			ptr[j] = (char *) malloc (ft_strlen(s) * sizeof(char));
+			if (!ptr[j])
+				return (NULL);
+			while (s[i] != c && s[i] != '\0')
+			{
+				ptr[j][i] = s[i];
+				i++;
+			}
+			ptr[j][i] = '\0';
+			j++;
+		}
+		i++;
+	}
+	ptr[j] = NULL;
+	return (ptr);
+} */
 
 int main(void)
 {
-        char s[] = "My name is Papa Mila";
-        char **r = ft_split(s, ' ');
-        int i = 0;
-        while (r[i] != NULL)
-        {
-                printf("%s \n", r[i]);
-                i++;
-        }
+	char s[] = "My name is Papa Mila";
+	char **r = ft_split(s, ' ');
+	int i = 0;
+	while (r[i] != NULL)
+	{
+		printf("%s \n", r[i]);
+		i++;
+	}
 }

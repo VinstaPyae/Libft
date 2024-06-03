@@ -6,7 +6,7 @@
 /*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:30 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/01 17:14:08 by jace             ###   ########.fr       */
+/*   Updated: 2024/06/04 02:04:04 by jace             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-        char	*ptr;
+        char    *ptr;
         size_t	len;
         size_t	i;
         size_t	j;
