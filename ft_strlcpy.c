@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 19:07:32 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/29 02:54:07 by jace             ###   ########.fr       */
+/*   Updated: 2024/06/03 17:40:50 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
     i = 0;
     src_len = ft_strlen(src);
     if (src_len + 1 < size)
-    {
         ft_memcpy(dest, src, src_len + 1);
-    }
     else
     {
         while (i < size - 1)
@@ -34,15 +32,21 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
     }
     return (src_len);
 }
-/*need to ask*/
+
 /* int main(void)
 {
         const char *s;
-        char d[5];
+        char d[8];
         size_t i;
+        char *src = "abcd";
+        char des[8];
+        size_t j = 8;
+
+        strlcpy(des, src, j);
+        printf("%s \n", des);
 
         s = "abcd";
-        i = 3;
+        i = 9;
         ft_strlcpy(d, s, i);
         printf("%s \n", d);
 } */

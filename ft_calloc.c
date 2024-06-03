@@ -6,7 +6,7 @@
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:21:24 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/30 16:44:46 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/03 15:43:32 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void    *ft_calloc(size_t nmemb, size_t size)
     return (ptr);
 }
 
-int main(void)
+/* int main(void)
 {
     char *ptr;
     ptr = ft_calloc(6, sizeof(char));
@@ -34,4 +34,4 @@ int main(void)
     }
     printf("%s \n", ptr);
     return (0);
-}
+} */

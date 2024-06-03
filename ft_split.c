@@ -3,14 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:00 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/01 18:22:21 by jace             ###   ########.fr       */
+/*   Updated: 2024/06/03 20:18:24 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int     ft_slen(char const *s)
+{
+        int     i;
+        int     c;
+
+        i = 0;
+        while (s[i])
+        {
+                c = 0;
+                if (s[i] == c)
+                {
+                        c++;
+                }
+                i++;
+        }
+        return (c);
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -21,7 +39,7 @@ char	**ft_split(char const *s, char c)
 
         if (!s)
                 return (NULL);
-        ptr = (char **)malloc(sizeof(char *) * (ft_strlen(s) + 1));
+        ptr = (char **)malloc((ft_slen(s) + 2) * sizeof(char *));
         if (ptr == NULL)
                 return (NULL);
         i = 0;
@@ -45,7 +63,7 @@ char	**ft_split(char const *s, char c)
         return (ptr);
 }
 
-/* int main(void)
+int main(void)
 {
         char s[] = "My name is Papa Mila";
         char **r = ft_split(s, ' ');
@@ -55,4 +73,4 @@ char	**ft_split(char const *s, char c)
                 printf("%s \n", r[i]);
                 i++;
         }
-} */
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:01:51 by pzaw              #+#    #+#             */
-/*   Updated: 2024/05/29 02:49:06 by jace             ###   ########.fr       */
+/*   Updated: 2024/06/03 19:59:37 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while(big[i] != '\0' && i < len)
@@ -33,14 +33,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-/* need to ask*/
+
 /* int main(void)
 {
 	const char *largestring = "Foo Bar Baz";
 	const char *smallstring = "Baa";
-    
-	char *ptr = strnstr(largestring, smallstring, sizeof(largestring));
+
 	char *pp = ft_strnstr(largestring, smallstring, sizeof(largestring));
-	printf("%s\n", ptr);
 	printf("%s\n", pp);
 } */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:21:33 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/03 03:02:20 by jace             ###   ########.fr       */
+/*   Updated: 2024/06/03 16:09:13 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_wlen(int n)
 char	*ft_itoa(int n)
 {
 	int	len;
-	int	nb;
+	long	nb;
 	char	*str;
 
 	nb = n;
@@ -57,7 +57,7 @@ char	*ft_itoa(int n)
 
 /* int main(void)
 {
-        int n = -247;
+        int n = -2147483648;
         char *s = ft_itoa(n);
         printf("%s \n", s);
 } */
