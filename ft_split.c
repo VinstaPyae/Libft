@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:00 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/04 03:19:20 by jace             ###   ########.fr       */
+/*   Updated: 2024/06/04 15:24:02 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,39 +71,7 @@ char	**ft_split(char const *s, char c)
 	return (ptr);
 }
 
-/* char	**ft_split(char const *s, char c)
-{
-	char	**ptr;
-	int	total_len;
-	int	i;
-	int	j;
-
-	total_len = ft_slen(s, c);
-	ptr = (char **) malloc ((total_len + 1) * sizeof(char));
-	i = 0;
-	j = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] != c)
-		{
-			ptr[j] = (char *) malloc (ft_strlen(s) * sizeof(char));
-			if (!ptr[j])
-				return (NULL);
-			while (s[i] != c && s[i] != '\0')
-			{
-				ptr[j][i] = s[i];
-				i++;
-			}
-			ptr[j][i] = '\0';
-			j++;
-		}
-		i++;
-	}
-	ptr[j] = NULL;
-	return (ptr);
-} */
-
-int main(void)
+/* int main(void)
 {
 	char s[] = "My name is Papa Mila";
 	char **r = ft_split(s, ' ');
@@ -113,4 +81,4 @@ int main(void)
 		printf("%s \n", r[i]);
 		i++;
 	}
-}
+} */
