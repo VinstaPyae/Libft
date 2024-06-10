@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:20 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/03 01:59:08 by jace             ###   ########.fr       */
+/*   Updated: 2024/06/08 11:13:15 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	res[i] = '\0';
 	return (res);
 }
-
 
 /* char my_func(unsigned int i, char str)
 {

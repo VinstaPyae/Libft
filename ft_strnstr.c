@@ -6,7 +6,7 @@
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:01:51 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/03 19:59:37 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/07 21:42:28 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t	l_len;
+	char	*b;
+	char	*l;
 
-	i = 0;
-	while(big[i] != '\0' && i < len)
+	b = (char *)big;
+	l = (char *)little;
+	if (!*l)
+		return ((char *)b);
+	l_len = ft_strlen(l);
+	while (*b && len >= l_len)
 	{
-		j = 0;
-		while (little[j] != '\0' && (i + j) < len)
-		{
-			if (little[j] != big[i +j])
-				break;
-			j++;
-		}
-		if (little[j] == '\0')
-			return ((char *)big + i);
-		i++;
+		if (ft_strncmp(b, l, l_len) == 0)
+			return ((char *) b);
+		b++;
+		len--;
 	}
 	return (NULL);
 }

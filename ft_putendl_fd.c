@@ -6,7 +6,7 @@
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 15:44:25 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/03 15:44:27 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/07 17:57:04 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
-	write(1, "\n", 2);
+	write(fd, "\n", 1);
 }
 
 /* int	main(void)

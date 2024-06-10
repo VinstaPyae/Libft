@@ -6,76 +6,101 @@
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:00 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/04 15:24:02 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/10 20:24:33 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_slen(char const *s, char c)
+static int	ft_wcount(const char *s, char c)
 {
+	int	count;
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	while (s[i])
+	count = 0;
+	while (*s)
 	{
-		if (s[i] == c)
+		if(*s != c && !i)
 		{
-			j++;
+			i = 1;
+			count++;
 		}
-		i++;
+		else if (*s == c)
+			i = 0;
+		s++;
 	}
-	return (j);
+	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static char	*ft_duplicate(const char *s, size_t len)
 {
-	char	**ptr;
-	int	total_len;
-	int	i;
+	char	*ptr;
 
-	total_len = ft_slen(s, c);
-	ptr = (char **) malloc ((total_len + 1) * sizeof(char));
+	ptr = (char *) malloc(len + 1);
+	if (!ptr)
+		return (NULL);
+	ptr[len] = '\0';
+	while (len--)
+		ptr[len] = s[len];
+	return (ptr);
+}
+
+static char	**ft_wordsplit(char **ptr, char const *s, char c)
+{
+	int	i;
+	char	*start;
+
 	i = 0;
-	k = 0;
-	while (s[i] != '\0')
+	while (*s)
 	{
-		if (s[i] != c)
+		if (*s != c)
 		{
-			j = 0;
-			while (s[i] != c && s[i] != '\0')
+			start = (char *)s;
+			while (*s && *s != c)
+				s++;
+			ptr[i] = ft_duplicate(start, s - start);
+			if (!ptr[i])
 			{
-				j++;
-				i++;
-			}
-			ptr[k] = (char *) malloc ((j + 1) * sizeof(char));
-			if (!ptr[k])
+				while (i > 0)
+					free(ptr[--i]);
 				return (NULL);
-			l = 0;
-			while (l < j)
-			{
-				ptr[k][l] = s[i - j + l];
-				l++;
 			}
-			ptr[k][l] = '\0';
-			k++;
+			i++;
 		}
-		i++;
+		else
+			s++;
 	}
-	ptr[k] = NULL;
+	ptr[i] = NULL;
+	return (ptr);
+}
+
+char **ft_split(char const *s, char c)
+{
+	char **ptr;
+
+	if(!s)
+		return (NULL);
+	ptr = (char **) malloc((ft_wcount(s, c) + 1) * sizeof(char *));
+	if (!ptr)
+		return (NULL);
+	if (!(ft_wordsplit(ptr, s, c)))
+	{
+		free(ptr);
+		return (NULL);
+	}
 	return (ptr);
 }
 
 /* int main(void)
 {
-	char s[] = "My name is Papa Mila";
-	char **r = ft_split(s, ' ');
+	char *s = "Hello My World!";
+	char c = ' ';
+	char **ptr = ft_split(s, c);
 	int i = 0;
-	while (r[i] != NULL)
+	while(ptr[i] != "\0")
 	{
-		printf("%s \n", r[i]);
+		printf("%s \n", ptr[i]);
 		i++;
 	}
 } */
