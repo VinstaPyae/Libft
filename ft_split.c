@@ -6,7 +6,7 @@
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:00 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/10 20:24:33 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/10 21:42:53 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_wcount(const char *s, char c)
 	count = 0;
 	while (*s)
 	{
-		if(*s != c && !i)
+		if (*s != c && !i)
 		{
 			i = 1;
 			count++;
@@ -48,8 +48,8 @@ static char	*ft_duplicate(const char *s, size_t len)
 
 static char	**ft_wordsplit(char **ptr, char const *s, char c)
 {
-	int	i;
 	char	*start;
+	int		i;
 
 	i = 0;
 	while (*s)
@@ -75,11 +75,11 @@ static char	**ft_wordsplit(char **ptr, char const *s, char c)
 	return (ptr);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **ptr;
+	char	**ptr;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	ptr = (char **) malloc((ft_wcount(s, c) + 1) * sizeof(char *));
 	if (!ptr)
@@ -95,10 +95,9 @@ char **ft_split(char const *s, char c)
 /* int main(void)
 {
 	char *s = "Hello My World!";
-	char c = ' ';
-	char **ptr = ft_split(s, c);
+	char **ptr = ft_split(s, ' ');
 	int i = 0;
-	while(ptr[i] != "\0")
+	while(ptr[i] != NULL)
 	{
 		printf("%s \n", ptr[i]);
 		i++;

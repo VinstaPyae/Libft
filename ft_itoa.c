@@ -6,13 +6,13 @@
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:21:33 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/07 21:49:11 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/10 21:43:43 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wlen(long n)
+static int	ft_wlen(long n)
 {
 	long	num;
 	int		len;

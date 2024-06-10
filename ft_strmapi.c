@@ -6,7 +6,7 @@
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:20 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/08 11:13:15 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/10 21:12:31 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	i;
-	char	*res;
+	size_t		i;
+	char		*res;
 
 	res = (char *) malloc ((ft_strlen(s) + 1) * sizeof(char));
 	if (!res)
