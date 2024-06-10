@@ -35,9 +35,6 @@ char	**ft_split(char const *s, char c)
 	char	**ptr;
 	int	total_len;
 	int	i;
-	int	j;
-	int	k;
-	int	l;
 
 	total_len = ft_slen(s, c);
 	ptr = (char **) malloc ((total_len + 1) * sizeof(char));
