@@ -6,7 +6,7 @@
 /*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:14 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/07 22:12:35 by pzaw             ###   ########.fr       */
+/*   Updated: 2024/06/11 15:19:35 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,4 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	char src[] = "12345";
 	ft_strlcat(dest, src, sizeof(dest));
 	printf("%s\n", dest);
-
-	char dest1[10] = "Test";
-	char src1[] = "12345";
-	strlcat(dest1, src1, sizeof(dest1));
-	printf("%s\n", dest1);
 } */

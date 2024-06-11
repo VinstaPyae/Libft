@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jace <jace@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:22:07 by pzaw              #+#    #+#             */
-/*   Updated: 2024/06/03 02:05:50 by jace             ###   ########.fr       */
+/*   Updated: 2024/06/11 15:24:28 by pzaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 /* void my_func(unsigned int i, char *str)
 {
         printf("Call function: i = %d and s = %c \n", i, *str);
-        *str = *str - 32;
+	return str + 32;
 }
 
 int main()
